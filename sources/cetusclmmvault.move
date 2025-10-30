@@ -211,6 +211,10 @@ public fun update_version(version: &mut Version, _: &AdminCap) {
     version.version = VERSION;
 }
 
+public fun update_owner(vault_manager: &mut VaultManager, owner: address, _: &AdminCap) {
+    vault_manager.owner = owner;
+}
+
 fun mul_div_u64(num1: u64, num2: u64, denom: u64): u64 {
     let r = ((num1 as u128) * (num2 as u128)) / (denom as u128);
     (r as u64)
